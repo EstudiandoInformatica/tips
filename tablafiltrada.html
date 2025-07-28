@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" id="txtSearch" placeholder="Buscar..." onkeyup="searchTable()">
+  <table border id="tabla">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+      </tr>      
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>John</td>
+        <td>Wick</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Bruce</td>
+        <td>Lee</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Brandon</td>
+        <td>Lee</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Chuck</td>
+        <td>Norris</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>John</td>
+        <td>Doe</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+      </tr>      
+    </tfoot>
+  </table>
+
+  <script>
+    function searchTable() {
+      var txtSearch, tabla, tr, visible, td, texto;
+      
+      //Objetos que vamos a usar (textbox y la tabla)
+      txtSearch = document.getElementById("txtSearch");
+      tabla = document.getElementById("tabla");
+      
+      // Guardamos en la variable tr todas las filas que estan dentro del <tbody>
+      tr = tabla.getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+
+      // Recorremos fila a fila
+      for (i=0; i<tr.length; i++) {
+        visible = false; // Por defecto decimos que no sea visible, ya que solo queremos mostrar SI existe parte del texto
+        td = tr[i].getElementsByTagName("td"); // Guardamos todas las columnas de dicha fila
+        for (j=0; j<td.length; j++) { // Recorremos todas las columnas de la fila
+          texto = td[j].innerText; //Guardamos el valor que tiene la celda (td) en la variable texto. OjO en algunos navegadores he tenido que usar textContent en vez de innerText (podeis usar un || con las dos propiedades) 
+          if (texto.toUpperCase().indexOf(txtSearch.value.toUpperCase()) > -1) { 
+            // si el contenido de la celda (en mayusculas) contiene parte el texto del usuario (en mayuscula) ponemos el visible a true
+            visible = true;
+          }
+        }
+        tr[i].style.display = visible ? "" : "none"; //si visible = true entonces lo dejamos visible, en caso de ser false, modificamos su css para hacer  que display:none
+      }      
+    }
+  </script>
+
+</body>
+</html>
