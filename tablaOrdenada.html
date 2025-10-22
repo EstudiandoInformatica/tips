@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla Ordenada</title>
+</head>
+
+<body>
+  <h1>Sort Completa</h1>
+  <table border id="myTable">
+    <tr>
+      <th onclick="sortTable('myTable', 0)">ID</th>
+      <th onclick="sortTable('myTable', 1)">Nombre</th>
+      <th onclick="sortTable('myTable', 2)">Email</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>John Wick</td>
+      <td>johnwick@mail.com</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Chuck Norris</td>
+      <td>chucknorris@mail.com</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Bruce Lee</td>
+      <td>brucelee@mail.com</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Brandon Lee</td>
+      <td>brandonlee@mail.com</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Dead Pool</td>
+      <td>deadpool@mail.com</td>
+    </tr>
+  </table>
+  <h1>Sort TBODY</h1>
+  <table border id="myTable2">
+    <thead>
+      <tr>
+        <th onclick="sortTable('myTable2', 0)">ID</th>
+        <th onclick="sortTable('myTable2', 1)">Nombre</th>
+        <th onclick="sortTable('myTable2', 2)">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>John Wick</td>
+        <td>johnwick@mail.com</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Chuck Norris</td>
+        <td>chucknorris@mail.com</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Bruce Lee</td>
+        <td>brucelee@mail.com</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Brandon Lee </td>
+        <td>brandonlee@mail.com</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Dead Pool</td>
+        <td>deadpool@mail.com</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th>ID</th>
+        <th onclick="sortTable('myTable2', 1)">Nombre</th>
+        <th onclick="sortTable('myTable2', 2)">Email</th>
+      </tr>
+    </tfoot>
+  </table>
+</body>
+
+<script>
+  function sortTable(tablaID, col) {
+    var table, enProceso, sortDir, rows, i, ini, debeCambiar, valorActual, valorNext, cambios;
+    table = document.getElementById(tablaID);
+    enProceso = true;
+    sortDir = "asc";
+    cambios = 0;
+
+    if (table.getElementsByTagName("thead")[0] === undefined) {
+      rows = table.rows;
+      ini = 1;
+    } else {
+      rows = table.getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+      ini = 0;
+    }
+
+    while (enProceso) {
+      enProceso = false;
+      for (i = ini; i < (rows.length - 1); i++) {
+        debeCambiar = false;
+        valorActual = rows[i].getElementsByTagName("td")[col];
+        valorNext = rows[i + 1].getElementsByTagName("td")[col];
+
+        if (sortDir == "asc") {
+          if (valorActual.innerHTML.toLowerCase() > valorNext.innerHTML.toLowerCase()) {
+            debeCambiar = true;
+            break;
+          }
+        } else { // DEsc
+          if (valorActual.innerHTML.toLowerCase() < valorNext.innerHTML.toLowerCase()) {
+            debeCambiar = true;
+            break;
+          }
+        }
+      }
+
+      if (debeCambiar) {
+        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+        enProceso = true;
+        cambios = 1;
+      } else {
+        if (cambios == 0 && sortDir == "asc") {
+          sortDir = "desc";
+          enProceso = true;
+        }
+      }
+
+    }
+  }
+</script>
+
+
+
+</html>
