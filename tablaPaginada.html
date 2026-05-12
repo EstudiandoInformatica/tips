@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabla Paginada</title>
+    <style>
+      body {
+        background-color: #83c9de;
+        font-size: 0.8em;
+      }
+      table {
+        background-color: white;
+      }
+
+      table th {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table border="1" id="myTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Planeta de nacimiento</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Iron Man / Tony Stark</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Captain America / Steve Rogers</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Thor</td>
+          <td>Asgard</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Hulk / Bruce Banner</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Black Widow / Natasha Romanoff</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Hawkeye / Clint Barton</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Spider-Man / Peter Parker</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Doctor Strange / Stephen Strange</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>Black Panther / T’Challa</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>Scarlet Witch / Wanda Maximoff</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>Vision</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>Ant-Man / Scott Lang</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>Wasp / Hope van Dyne</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td>Captain Marvel / Carol Danvers</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>15</td>
+          <td>War Machine / James Rhodes</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>16</td>
+          <td>Falcon / Sam Wilson</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>17</td>
+          <td>Winter Soldier / Bucky Barnes</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>18</td>
+          <td>Loki</td>
+          <td>Jotunheim</td>
+        </tr>
+        <tr>
+          <td>19</td>
+          <td>Odin</td>
+          <td>Asgard</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td>Hela</td>
+          <td>Asgard</td>
+        </tr>
+        <tr>
+          <td>21</td>
+          <td>Heimdall</td>
+          <td>Asgard</td>
+        </tr>
+        <tr>
+          <td>22</td>
+          <td>Jane Foster</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>23</td>
+          <td>Star-Lord / Peter Quill</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>24</td>
+          <td>Gamora</td>
+          <td>Zen-Whoberi</td>
+        </tr>
+        <tr>
+          <td>25</td>
+          <td>Drax</td>
+          <td>Tierra / origen según versión</td>
+        </tr>
+        <tr>
+          <td>26</td>
+          <td>Rocket Raccoon</td>
+          <td>Halfworld</td>
+        </tr>
+        <tr>
+          <td>27</td>
+          <td>Groot</td>
+          <td>Planeta X</td>
+        </tr>
+        <tr>
+          <td>28</td>
+          <td>Nebula</td>
+          <td>Luphomoide / origen según versión</td>
+        </tr>
+        <tr>
+          <td>29</td>
+          <td>Mantis</td>
+          <td>Tierra / origen según versión</td>
+        </tr>
+        <tr>
+          <td>30</td>
+          <td>Thanos</td>
+          <td>Titán</td>
+        </tr>
+        <tr>
+          <td>31</td>
+          <td>Ronan el Acusador</td>
+          <td>Hala</td>
+        </tr>
+        <tr>
+          <td>32</td>
+          <td>Yondu Udonta</td>
+          <td>Centauri IV</td>
+        </tr>
+        <tr>
+          <td>33</td>
+          <td>Nick Fury</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>34</td>
+          <td>Maria Hill</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>35</td>
+          <td>Phil Coulson</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>36</td>
+          <td>Shang-Chi</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>37</td>
+          <td>Wong</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>38</td>
+          <td>Moon Knight / Marc Spector</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>39</td>
+          <td>Daredevil / Matt Murdock</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>40</td>
+          <td>Jessica Jones</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>41</td>
+          <td>Luke Cage</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>42</td>
+          <td>Iron Fist / Danny Rand</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>43</td>
+          <td>Punisher / Frank Castle</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>44</td>
+          <td>Blade</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>45</td>
+          <td>Deadpool / Wade Wilson</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>46</td>
+          <td>Wolverine / Logan</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>47</td>
+          <td>Professor X / Charles Xavier</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>48</td>
+          <td>Magneto / Erik Lehnsherr</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>49</td>
+          <td>Cyclops / Scott Summers</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>50</td>
+          <td>Jean Grey</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>51</td>
+          <td>Storm / Ororo Munroe</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>52</td>
+          <td>Rogue</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>53</td>
+          <td>Mystique / Raven Darkhölme</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>54</td>
+          <td>Beast / Hank McCoy</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>55</td>
+          <td>Nightcrawler / Kurt Wagner</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>56</td>
+          <td>Colossus / Piotr Rasputin</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>57</td>
+          <td>Iceman / Bobby Drake</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>58</td>
+          <td>Kitty Pryde</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>59</td>
+          <td>Gambit / Remy LeBeau</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>60</td>
+          <td>Mr. Fantastic / Reed Richards</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>61</td>
+          <td>Invisible Woman / Sue Storm</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>62</td>
+          <td>Human Torch / Johnny Storm</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>63</td>
+          <td>The Thing / Ben Grimm</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>64</td>
+          <td>Silver Surfer / Norrin Radd</td>
+          <td>Zenn-La</td>
+        </tr>
+        <tr>
+          <td>65</td>
+          <td>Galactus</td>
+          <td>Taa</td>
+        </tr>
+        <tr>
+          <td>66</td>
+          <td>Doctor Doom / Victor von Doom</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>67</td>
+          <td>Namor</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>68</td>
+          <td>She-Hulk / Jennifer Walters</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>69</td>
+          <td>Ms. Marvel / Kamala Khan</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>70</td>
+          <td>Squirrel Girl / Doreen Green</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>71</td>
+          <td>Ghost Rider / Johnny Blaze</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>72</td>
+          <td>Elektra</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>73</td>
+          <td>Kingpin / Wilson Fisk</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>74</td>
+          <td>Green Goblin / Norman Osborn</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>75</td>
+          <td>Doctor Octopus / Otto Octavius</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>76</td>
+          <td>Venom / Eddie Brock</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>77</td>
+          <td>Venom / Simbionte</td>
+          <td>Klyntar</td>
+        </tr>
+        <tr>
+          <td>78</td>
+          <td>Carnage / Cletus Kasady</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>79</td>
+          <td>Carnage / Simbionte</td>
+          <td>Klyntar</td>
+        </tr>
+        <tr>
+          <td>80</td>
+          <td>Mysterio / Quentin Beck</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>81</td>
+          <td>Sandman / Flint Marko</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>82</td>
+          <td>Vulture / Adrian Toomes</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>83</td>
+          <td>Kraven el Cazador</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>84</td>
+          <td>Morbius</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>85</td>
+          <td>Ultron</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>86</td>
+          <td>Kang el Conquistador</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>87</td>
+          <td>Red Skull / Johann Schmidt</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>88</td>
+          <td>Baron Zemo</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>89</td>
+          <td>Abomination / Emil Blonsky</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>90</td>
+          <td>Mandarin</td>
+          <td>Tierra</td>
+        </tr>
+        <tr>
+          <td>91</td>
+          <td>Taskmaster</td>
+          <td>Tierra</td>
+        </tr>
+      </tbody>
+    </table>
+    <a href="#" onclick="prevPage()" id="btn_prev"><<</a>
+    Page: <span id="page"></span>
+    <a href="#" onclick="nextPage()" id="btn_next">>></a>
+
+    <script>
+      var current_page = 1;
+      var record_per_page = document.getElementById("record_per_page").value;
+      var tabla = 10;
+
+      var l = tabla
+        .getElementsByTagName("tbody")[0]
+        .getElementsByTagName("tr").length;
+      console.log("NUM. Rows: " + l);
+
+      function prevPage() {
+        if (current_page > 1) {
+          current_page--;
+          changePage(current_page);
+        }
+      }
+
+      function nextPage() {
+        if (current_page < numPages()) {
+          current_page++;
+          changePage(current_page);
+        }
+      }
+
+      function changePage(page) {
+        var btn_next = document.getElementById("btn_next");
+        var btn_prev = document.getElementById("btn_prev");
+        var listing_table = document.getElementById("myTable");
+        var page_span = document.getElementById("page");
+
+        if (page < 1) page = 1;
+        if (page > numPages()) page = numPages();
+
+        [
+          ...listing_table
+            .getElementsByTagName("tbody")[0]
+            .getElementsByTagName("tr"),
+        ].forEach((tr) => {
+          tr.style.display = "none";
+        });
+        listing_table.rows[0].display = ""; // Titulo
+
+        for (
+          var i = (page - 1) * record_per_page + 1;
+          i < page * record_per_page + 1;
+          i++
+        ) {
+          if (listing_table.rows[i]) {
+            listing_table.rows[i].style.display = "";
+          } else {
+            continue;
+          }
+        }
+
+        page_span.innerHTML = page + " / " + numPages();
+
+        if (page == 1) {
+          btn_prev.style.visibility = "hidden";
+        } else {
+          btn_prev.style.visibility = "visible";
+        }
+
+        if (page == numPages()) {
+          btn_next.style.visibility = "hidden";
+        } else {
+          btn_next.style.visibility = "visible";
+        }
+      }
+
+      function numPages() {
+        return Math.ceil(l / record_per_page);
+      }
+
+      window.onload = function () {
+        changePage(current_page);
+      };
+    </script>
+  </body>
+</html>
